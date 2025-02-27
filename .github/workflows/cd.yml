@@ -38,7 +38,7 @@ jobs:
         run: scripts/buildprod.sh
 
       - name: Run database migration
-        run: goose -dir ./sql/schema sqlite3 "$DATABASE_URL" up
+        run: scripts/migrateup.sh
 
       - id: auth
         uses: google-github-actions/auth@v2
